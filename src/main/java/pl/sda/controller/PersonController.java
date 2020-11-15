@@ -18,4 +18,6 @@ public class PersonController {
         model.addAttribute("persons", personService.findAll());
         return "index";
     }
+
+
 }
