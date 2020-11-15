@@ -1,14 +1,13 @@
 package pl.sda.dto;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Builder
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class PersonDto implements Serializable {
 
     private Long id;
