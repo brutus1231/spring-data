@@ -15,7 +15,7 @@ public class PersonService {
 
     private final PersonRepository personRepository;
 
-    public List<PersonDto> findAll(){
+    public List<PersonDto> findAll() {
         List<PersonDto> personDtos = new ArrayList<>();
         Iterable<Person> persons = personRepository.findAll();
         for (Person person : persons) {

@@ -2,12 +2,14 @@ package pl.sda.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "PERSON")
 @Data
+@NoArgsConstructor
 @Builder
 public class Person {
 
