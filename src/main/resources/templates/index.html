@@ -24,6 +24,54 @@
                 </tr>
             </th:block>
         </table>
+
+
+    <div>
+        <input type="button" value="dodaj" onclick="$('#addPersonDiv').toggle()" class="btn btn-success"/>
+        <input type="button" value="edytuj" onclick="" class="btn btn-success"/>
+    </div>
+
+    <div id="addPersonDiv">
+        <form class="form-horizontal" method="post"  th:action="@{/persons/add}" th:object="${person}">
+            <fieldset>
+                <div id="legend">
+                    <legend class="">Add new person</legend>
+                </div>
+                <div class="control-group">
+                    <!-- First name -->
+                    <label class="control-label"  for="firstName">First name</label>
+                    <div class="controls">
+                        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge" th:field="*{firstName}">
+                        <p class="help-block">First name can contain any letters without spaces</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Last name -->
+                    <label class="control-label" for="lastName">Last name</label>
+                    <div class="controls">
+                        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge" th:field="*{lastName}">
+                        <p class="help-block">Please provide your last name</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Address-->
+                    <label class="control-label" for="email">Email</label>
+                    <div class="controls">
+                        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" th:field="*{email}">
+                        <p class="help-block">Email should be at least 4 characters</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                        <button class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
     </div>
 </body>
 </html>

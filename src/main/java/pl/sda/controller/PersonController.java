@@ -15,14 +15,14 @@ public class PersonController {
 
     private final PersonService personService;
 
-    @GetMapping("/")
+    @GetMapping({"/", "/persons"})
     public String mainPage(Model model) {
         model.addAttribute("persons", personService.findAll());
         model.addAttribute("person", PersonDto.builder().build());
         return "index";
     }
 
-    @PostMapping("/add")
+    @PostMapping("persons/add")
     public String addPerson(@ModelAttribute("person") PersonDto person, Model model) {
         personService.add(person);
         model.addAttribute("persons", personService.findAll());
