@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pl.sda.model.Person;
 import pl.sda.repository.PersonRepository;
 
 @SpringBootApplication
@@ -19,6 +20,14 @@ public class SpringDataApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		personRepository.save(createPerson("Marta", "Kowalska", "marta@wp.pl"));
 
+	}
+
+	private Person createPerson(String firstName, String lastName, String email) {
+		return Person.builder().firstName(firstName)
+				.lastName(lastName)
+				.email(email)
+				.build();
 	}
 }
