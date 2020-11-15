@@ -17,17 +17,17 @@ public class PersonController {
 
     @GetMapping("/")
     public String mainPage(Model model) {
-
         model.addAttribute("persons", personService.findAll());
+        model.addAttribute("person", PersonDto.builder().build());
         return "index";
     }
 
-/*    @PostMapping("/add")
-    public String addUser(@ModelAttribute("person") PersonDto person, Model model) {
+    @PostMapping("/add")
+    public String addPerson(@ModelAttribute("person") PersonDto person, Model model) {
         personService.add(person);
         model.addAttribute("persons", personService.findAll());
         model.addAttribute("person", PersonDto.builder().build());
         return "index";
-    }*/
+    }
 
 }
