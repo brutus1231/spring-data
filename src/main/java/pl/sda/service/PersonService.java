@@ -28,4 +28,13 @@ public class PersonService {
         }
         return personDtos;
     }
+
+    public void add(PersonDto personDto) {
+        Person person = Person.builder()
+                .firstName(personDto.getFirstName())
+                .lastName(personDto.getLastName())
+                .email(personDto.getEmail())
+                .build();
+        personRepository.save(person);
+    }
 }
