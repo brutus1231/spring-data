@@ -21,7 +21,8 @@ public class SpringDataApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		personRepository.save(createPerson("Marta", "Kowalska", "marta@wp.pl"));
-
+		personRepository.save(createPerson("Kasia", "Mazur", "kasia@wp.pl"));
+		personRepository.save(createPerson("Ola", "Nowak", "ola@gmail.com"));
 	}
 
 	private Person createPerson(String firstName, String lastName, String email) {

@@ -15,7 +15,7 @@ public class PersonController {
     @GetMapping("/")
     public String mainPage(Model model) {
 
-        model.addAttribute("users", personService.findAll());
+        model.addAttribute("persons", personService.findAll());
         return "index";
     }
 }
